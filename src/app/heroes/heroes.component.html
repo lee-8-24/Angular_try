@@ -1,0 +1,41 @@
+<!-- <h2>{{hero.name}} details</h2> -->
+
+<div>
+
+    <!-- <label>输入你要查询的项目
+        <input [(ngModel)]="hero.name" placeholder="name" />
+    </label>
+    <div>项目名称: {{hero.name|uppercase}}</div>
+    <div>项目id:{{hero.id}}</div>
+    <div>等待人数:{{hero.wait_number}}人</div>
+    <div>等到时间:{{hero.wait_time}}分</div> -->
+    <table>
+        <td class="my_demo2">
+            <h2>选择你喜欢玩的项目并查看信息吧</h2>
+            <ul class="heroes .demo">
+                <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
+                    <span class="badge">{{hero.id}}</span>
+                    {{hero.name}}
+                </li>
+            </ul>
+        </td>
+        <td>
+            <div *ngIf="selectedHero" class="my_demo2">
+                <!-- <h2>{{selectedHero.name | uppercase}} 项目信息</h2>
+        <div><span>id: </span>{{selectedHero.id}}</div>
+        <div>
+            <label>name:
+                <input [(ngModel)]="selectedHero.name" placeholder="name" />
+            </label>
+        </div>
+        <div>等待时间：{{selectedHero.wait_time}}分</div>
+        <div>等待人数：{{selectedHero.wait_number}}人</div> -->
+                <app-hero-detail [hero]="selectedHero"></app-hero-detail>
+
+            </div>
+        </td>
+    </table>
+
+
+
+    <!-- </div> -->

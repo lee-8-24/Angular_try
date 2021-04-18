@@ -1,0 +1,13 @@
+<div *ngIf="hero">
+
+    <h2>{{hero.name | uppercase}} 详细信息</h2>
+    <div><span>id: </span>{{hero.id}}</div>
+    <div>
+      <label>项目名称:
+        <input [(ngModel)]="hero.name" placeholder="name"/>
+      </label>
+      <span><br>等待时间：{{hero.wait_time}}分</span>
+      <span><br>等待人数：{{hero.wait_number}}人</span>
+    </div>
+  
+  </div>
